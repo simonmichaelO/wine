@@ -1,0 +1,335 @@
+:root {
+  --bg: #faf6ef;
+  --text: #2e211a;
+  --accent: #6b0f1a;
+  --gold: #b8924e;
+  --soft: #f3e9da;
+  --card: #ffffff;
+}
+
+.dark-mode {
+  --bg: #16110d;
+  --text: #ecdccb;
+  --accent: #c8506a;
+  --gold: #e0b878;
+  --soft: #221a15;
+  --card: #1d1612;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h5, .navbar-brand, .section-title {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* ============ NAVBAR ============ */
+#navbar {
+  background: rgba(250, 246, 239, 0.92);
+  backdrop-filter: blur(10px);
+  padding: 18px 0;
+  transition: all 0.4s ease;
+}
+
+.dark-mode #navbar {
+  background: rgba(22, 17, 13, 0.92);
+}
+
+#navbar.scrolled {
+  padding: 10px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+  font-size: 1.6rem;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: var(--accent) !important;
+}
+
+.nav-link {
+  color: var(--text) !important;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0 8px;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-toggler {
+  border: none;
+  color: var(--accent);
+  font-size: 1.3rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.theme-toggle {
+  background: var(--soft);
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--gold);
+  color: #fff;
+}
+
+/* ============ HERO ============ */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(rgba(20, 10, 8, 0.55), rgba(20, 10, 8, 0.55)),
+              url('../assets/images/hero.jpg') center/cover no-repeat fixed;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  letter-spacing: 4px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.85rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+/* ============ SECTIONS ============ */
+.section-padding {
+  padding: 110px 0;
+}
+
+.bg-soft {
+  background: var(--soft);
+}
+
+.section-title {
+  font-size: 3rem;
+  color: var(--accent);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 2px;
+  background: var(--gold);
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ============ WINE CARDS ============ */
+.wine-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.wine-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+.wine-img-wrap {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+}
+
+.wine-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.wine-img-wrap .hover-img {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.wine-card:hover .hover-img {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.wine-card:hover .main-img {
+  opacity: 0;
+}
+
+.wine-body {
+  padding: 24px;
+  text-align: center;
+}
+
+.wine-body h5 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.wine-body p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* ============ BUTTONS ============ */
+.btn-custom {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 13px 30px;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: var(--gold);
+  color: #2e211a;
+  transform: translateY(-3px);
+}
+
+.btn-outline-custom {
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  border-radius: 50px;
+  padding: 8px 22px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ============ GALLERY ============ */
+.gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 260px;
+}
+
+.gallery-item img,
+.gallery-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 1.5s ease;
+}
+
+.gallery-item:hover img,
+.gallery-item:hover video {
+  transform: scale(1.08);
+}
+
+/* ============ ADDRESS CARDS ============ */
+.address-card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s ease;
+}
+
+.address-card:hover {
+  transform: translateY(-8px);
+}
+
+.address-card i {
+  font-size: 2.2rem;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.address-card h5 {
+  color: var(--accent);
+  font-size: 1.6rem;
+}
+
+.address-card p {
+  line-height: 1.7;
+}
+
+/* ============ FOOTER ============ */
+footer {
+  background: var(--soft);
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin: 0 8px;
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--accent);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+/* ============ MODAL ============ */
+#modalContent img,
+#modalContent video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
