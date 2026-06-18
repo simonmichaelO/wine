@@ -1,6 +1,6 @@
 // ===== YOUR WHATSAPP NUMBER (edit this) =====
 // Format: country code + number, no + and no spaces
-const WHATSAPP = "2349033328061";
+const WHATSAPP = "2349021419000";
 
 // ===== WINE CATEGORIES =====
 const wines = [
