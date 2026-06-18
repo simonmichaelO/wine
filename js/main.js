@@ -37,8 +37,9 @@ const gallery = [
 
 // ===== SET ALL WHATSAPP LINKS =====
 function setWhatsAppLinks() {
+  const message = "Hello, I would like to make an inquiry about House of Brown wine";
   document.querySelectorAll(".wa-link").forEach(a => {
-    a.href = "https://wa.me/" + WHATSAPP + "?text=Hello%2C%20I%20would%20like%20to%20make%20an%20inquiry";
+    a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(message);
   });
 }
 
